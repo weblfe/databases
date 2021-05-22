@@ -1,0 +1,20 @@
+version: 1
+
+databases:
+  default: mysql
+  connections:
+    mysql:
+      driver: mysql
+      host: 127.0.0.1
+      port: 3306
+      user: root
+      password: root
+      database: "bongolive"
+      setMaxOpenConns: 0
+      setMaxIdleConns: 1
+      options: "charset=utf8mb4&parseTime=true"
+      prefix: "cmf_"
+      master:
+        - { "driver": "mysql", "host": "127.0.0.1", "port": 23306, "pasword": "root",database: "bongolive" }
+      slave:
+        - { "driver": "mysql", "host": "127.0.0.1", "port": 3306, "pasword": "root",database: "bongolive" }
